@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerVehiclesCrudAPI", "CustomerVehiclesCrudAPI\CustomerVehiclesCrudAPI.csproj", "{48F3AD9B-EED0-4ACE-A344-7417B1440B4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{941BCF86-D7A5-42E1-AF8F-93FD9BA5BC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerVehiclesCrudAPITest", "CustomerVehiclesCrudAPITest\CustomerVehiclesCrudAPITest.csproj", "{891D5AA4-CA82-4078-9665-A7462AC69A2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F3AD9B-EED0-4ACE-A344-7417B1440B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F3AD9B-EED0-4ACE-A344-7417B1440B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F3AD9B-EED0-4ACE-A344-7417B1440B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F3AD9B-EED0-4ACE-A344-7417B1440B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08731157-BB36-4ED2-B25D-F1614B69FBD9}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{891D5AA4-CA82-4078-9665-A7462AC69A2E} = {941BCF86-D7A5-42E1-AF8F-93FD9BA5BC32}
+	EndGlobalSection
+EndGlobal
