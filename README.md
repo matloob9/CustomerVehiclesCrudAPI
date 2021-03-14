@@ -1,31 +1,34 @@
 # Connected Vehicles Application - Alten Challange
-Introduction
-It is required to design and implement vehicle connectivity monitoring dashboard platform. There are a number of connected vehicles that belongs to a number of customers and it is needed to view the status of the connection for these vehicles on a monitoring display. The vehicles send the status of the connection - ping/heartbeat - one time per minute. If the heartbeat was not received by the vehicle for more than 1 minute, it means no connection.
 
-Requirements
-Web GUI (Single Page Application Framework/Platform).
+## Introduction
 
-An overview of all vehicles should be visible on one page (full-screen display), together with their status.
+Design and implement vehicle connectivity monitoring dashboard platform. There are a number of connected vehicles that belongs to a number of customers and it is needed to view the status of the connection for these vehicles on a monitoring display. The vehicles send the status of the connection - ping/heartbeat - one time per minute. If the heartbeat was not received by the vehicle for more than 1 minute, it means no connection.
 
-It should be able to filter, to only show vehicles for a specific customer.
+## Requirements
 
-It should be able to filter, to only show vehicles that have a specific status.
+1- Web GUI (Single Page Application Framework/Platform).
 
-Random simulation to vehicles status sending.
+   - An overview of all vehicles should be visible on one page (full-screen display), together with their status.
 
-If database design will consume a lot of time, use data in-memory representation.
+   - It should be able to filter, to only show vehicles for a specific customer.
 
-Unit Testing.
+   - It should be able to filter, to only show vehicles that have a specific status.
 
-.NET Core, Java or any native language.
+   - Random simulation to vehicles status sending.
 
-Complete analysis for the problem.
+   - If database design will consume a lot of time, use data in-memory representation.
 
-Full architectural sketch to solution.
+   - Unit Testing.
 
-Analysis behind the solution design, technologies,....
+   - .NET Core, Java or any native language.
 
-How the solution will make use of cloud.
+   -  Complete analysis for the problem.
 
-Deployment steps.
+   -  Full architectural sketch to solution.
+
+   - Analysis behind the solution design, technologies,....
+
+   -  How the solution will make use of cloud.
+
+   - Deployment steps.
 
