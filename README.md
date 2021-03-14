@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Design and implement vehicle connectivity monitoring dashboard platform. There are a number of connected vehicles that belongs to a number of customers and it is needed to view the status of the connection for these vehicles on a monitoring display. The vehicles send the status of the connection - ping/heartbeat - one time per minute. If the heartbeat was not received by the vehicle for more than 1 minute, it means no connection.
+>Design and implement vehicle connectivity monitoring dashboard platform. There are a number of connected vehicles that belongs to a number of customers and it is >needed to view the status of the connection for these vehicles on a monitoring display. The vehicles send the status of the connection - ping/heartbeat - one time >per minute. If the heartbeat was not received by the vehicle for more than 1 minute, it means no connection.
 
 ## Requirements
 
