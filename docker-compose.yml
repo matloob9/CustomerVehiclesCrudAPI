@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  customervehiclescrudapi:
+    image: ${DOCKER_REGISTRY-}customervehiclescrudapi
+    build:
+      context: .
+      dockerfile: CustomerVehiclesCrudAPI/Dockerfile

@@ -18,7 +18,6 @@ namespace CustomerVehiclesCrudAPI.Controllers
         public VehicleController(CustomerVehiclesContext context)
         {
             _context = context;
-
         }
 
         // GET: api/Vehicle

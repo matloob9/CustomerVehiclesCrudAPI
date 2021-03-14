@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{941BCF86-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerVehiclesCrudAPITest", "CustomerVehiclesCrudAPITest\CustomerVehiclesCrudAPITest.csproj", "{891D5AA4-CA82-4078-9665-A7462AC69A2E}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{84DCB043-D5B5-4E55-9D65-27641CFAEBCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{891D5AA4-CA82-4078-9665-A7462AC69A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84DCB043-D5B5-4E55-9D65-27641CFAEBCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DCB043-D5B5-4E55-9D65-27641CFAEBCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84DCB043-D5B5-4E55-9D65-27641CFAEBCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84DCB043-D5B5-4E55-9D65-27641CFAEBCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
