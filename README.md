@@ -6,7 +6,7 @@
 
 ## Requirements
 
-1- Web GUI (Single Page Application Framework/Platform).
+1. Web GUI (Single Page Application Framework/Platform).
 
    - An overview of all vehicles should be visible on one page (full-screen display), together with their status.
 
@@ -14,21 +14,21 @@
 
    - It should be able to filter, to only show vehicles that have a specific status.
 
-   - Random simulation to vehicles status sending.
+2. Random simulation to vehicles status sending.
 
-   - If database design will consume a lot of time, use data in-memory representation.
+3. If database design will consume a lot of time, use data in-memory representation.
 
-   - Unit Testing.
+4. Unit Testing.
 
-   - .NET Core, Java or any native language.
+5. .NET Core, Java or any native language.
 
-   -  Complete analysis for the problem.
+6. Complete analysis for the problem.
 
-   -  Full architectural sketch to solution.
+7. Full architectural sketch to solution.
 
-   - Analysis behind the solution design, technologies,....
+8. Analysis behind the solution design, technologies,....
 
-   -  How the solution will make use of cloud.
+9. How the solution will make use of cloud.
 
-   - Deployment steps.
+10. Deployment steps.
 
