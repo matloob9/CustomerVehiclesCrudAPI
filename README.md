@@ -8,11 +8,11 @@
 
 1. Web GUI (Single Page Application Framework/Platform).
 
-   - An overview of all vehicles should be visible on one page (full-screen display), together with their status.
-
-   - It should be able to filter, to only show vehicles for a specific customer.
-
-   - It should be able to filter, to only show vehicles that have a specific status.
+   >- An overview of all vehicles should be visible on one page (full-screen display), together with their status.
+>
+   >- It should be able to filter, to only show vehicles for a specific customer.
+>
+   >- It should be able to filter, to only show vehicles that have a specific status.
 
 2. Random simulation to vehicles status sending.
 
