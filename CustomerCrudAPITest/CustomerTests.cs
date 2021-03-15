@@ -2,26 +2,26 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using VehicleCrudAPI.Models;
+using CustomerCrudAPI.Models;
 using Xunit;
-using VehicleCrudAPI;
+using CustomerCrudAPI;
 
-namespace CustomerVehiclesCrudAPITest
+namespace CustomerCrudAPITest
 {
-    public class VehicleTests : IClassFixture<TestFixture<Startup>>
+    public class CustomerTests : IClassFixture<TestFixture<Startup>>
     {
         private HttpClient Client;
 
-        public VehicleTests(TestFixture<Startup> fixture)
+        public CustomerTests(TestFixture<Startup> fixture)
         {
             Client = fixture.Client;
         }
 
         [Fact]
-        public async Task TestGetVehicleItemsAsync()
+        public async Task TestGetCustomertemsAsync()
         {
             // Arrange
-            var request = "/api/Vehicle";
+            var request = "/api/Customer";
 
             // Act
             var response = await Client.GetAsync(request);
@@ -31,10 +31,10 @@ namespace CustomerVehiclesCrudAPITest
         }
 
         [Fact]
-        public async Task TestGetVehicleItemAsync()
+        public async Task TestGetCustomertemAsync()
         {
             // Arrange
-            var request = "/api/Vehicle/1";
+            var request = "/api/Customer/1";
 
             // Act
             var response = await Client.GetAsync(request);
@@ -44,18 +44,17 @@ namespace CustomerVehiclesCrudAPITest
         }
 
         [Fact]
-        public async Task TestPostVehicleItemAsync()
+        public async Task TestPostCustomertemAsync()
         {
             // Arrange
             var request = new
             {
-                Url = "/api/Vehicle",
+                Url = "/api/Customer",
                 Body = new
                 {
-                  vin= "Test13124",
-                  regNumber= "TestReg123",
-                  customerFk= 2,
-                  isConnected= true,
+                      customerName= "Ahmed Matloub",
+                      address="Egypt Cairo",
+                      
                 }
             };
 
@@ -68,20 +67,18 @@ namespace CustomerVehiclesCrudAPITest
         }
 
         [Fact]
-        public async Task TestPutVehicleItemAsync()
+        public async Task TestPutCustomertemAsync()
         {
             // Arrange
             var request = new
             {
-                Url = "/api/Vehicle/8",
-
+                Url = "/api/Customer/1002",
                 Body = new
                 {
-                    Id = 8,
-                    vin = "Test1232124",
-                    regNumber = "TestReg123",
-                    customerFk = 2,
-                    isConnected = false,
+                    Id= 1002,
+                    customerName = "Ahmed Mostafa Matloub",
+                    address = "Egypt Cairo",
+
 
                 }
             };
@@ -93,6 +90,6 @@ namespace CustomerVehiclesCrudAPITest
             response.EnsureSuccessStatusCode();
         }
 
-       
+
     }
 }

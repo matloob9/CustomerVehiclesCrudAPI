@@ -6,7 +6,7 @@ using VehicleCrudAPI.Models;
 using Xunit;
 using VehicleCrudAPI;
 
-namespace CustomerVehiclesCrudAPITest
+namespace VehicleCrudAPITest
 {
     public class VehicleTests : IClassFixture<TestFixture<Startup>>
     {
@@ -47,15 +47,18 @@ namespace CustomerVehiclesCrudAPITest
         public async Task TestPostVehicleItemAsync()
         {
             // Arrange
+            DateTime CDate = DateTime.Now;
+
             var request = new
             {
                 Url = "/api/Vehicle",
                 Body = new
                 {
-                  vin= "Test13124",
+                  vin= "Testqwq13124",
                   regNumber= "TestReg123",
                   customerFk= 2,
                   isConnected= true,
+                  LastUpdatedDate= CDate,
                 }
             };
 
@@ -71,18 +74,20 @@ namespace CustomerVehiclesCrudAPITest
         public async Task TestPutVehicleItemAsync()
         {
             // Arrange
+            DateTime CDate = DateTime.Now;
+
             var request = new
             {
-                Url = "/api/Vehicle/8",
+                Url = "/api/Vehicle/1002",
 
                 Body = new
                 {
-                    Id = 8,
-                    vin = "Test1232124",
+                    Id = 1002,
+                    vin = "Tessst1232124",
                     regNumber = "TestReg123",
                     customerFk = 2,
                     isConnected = false,
-
+                    LastUpdatedDate= CDate
                 }
             };
 

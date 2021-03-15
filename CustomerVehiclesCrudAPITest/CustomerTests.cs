@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using CustomerVehiclesCrudAPI.Models;
+using CustomerCrudAPI.Models;
 using Xunit;
-using CustomerVehiclesCrudAPI;
+using CustomerCrudAPI;
 
 namespace CustomerVehiclesCrudAPITest
 {
