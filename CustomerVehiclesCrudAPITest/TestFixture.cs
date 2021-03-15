@@ -26,6 +26,7 @@ namespace CustomerVehiclesCrudAPITest
 
             do
             {
+
                 directoryInfo = directoryInfo.Parent;
 
                 var projectDirectoryInfo = new DirectoryInfo(Path.Combine(directoryInfo.FullName, projectRelativePath));
