@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using VehicleCrudAPI.dContext;
+using VehicleCrudAPI.Models;
 
 namespace VehicleCrudAPI
 {
@@ -26,6 +29,8 @@ namespace VehicleCrudAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var dbCnStr = Configuration.GetConnectionString("VehicleConSTR");
+            services.AddDbContextPool<VehicleContext>(options => options.UseSqlServer(dbCnStr));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
