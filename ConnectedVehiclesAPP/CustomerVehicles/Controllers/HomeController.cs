@@ -62,9 +62,47 @@ namespace CustomerVehicles.Controllers
 
             return View(Vehicles);
             }
-      
 
-            public IActionResult Privacy()
+        public async Task<IActionResult> Details(int Id)
+        {
+            List<Customer> Customers = new List<Customer>();
+            Vehicle VehicleData = new Vehicle();
+
+            HttpClient client = _CustomerAPI.Intial();
+            HttpResponseMessage res = await client.GetAsync("api/Customer");
+            if (res.IsSuccessStatusCode)
+            {
+                var results = res.Content.ReadAsStringAsync().Result;
+                Customers = JsonConvert.DeserializeObject<List<Customer>>(results);
+            }
+
+
+            HttpClient vclient = _VehicleAPI.Intial();
+            HttpResponseMessage Vres = await vclient.GetAsync($"api/Vehicle/{Id}");
+            if (Vres.IsSuccessStatusCode)
+            {
+                var results = Vres.Content.ReadAsStringAsync().Result;
+                VehicleData = JsonConvert.DeserializeObject<Vehicle>(results);
+            }
+           
+                int CustomerID = VehicleData.CustomerFk;
+
+                HttpClient Cclient = _CustomerAPI.Intial();
+                HttpResponseMessage Cres = await Cclient.GetAsync("api/Customer/" + CustomerID);
+                if (Cres.IsSuccessStatusCode)
+                {
+                    var results = Cres.Content.ReadAsStringAsync().Result;
+                    Customer CustomerValue = JsonConvert.DeserializeObject<Customer>(results);
+                    VehicleData.CustomerName = CustomerValue.CustomerName;
+                }
+
+            
+
+            return View(VehicleData);
+        }
+
+
+        public IActionResult Privacy()
         {
             return View();
         }
