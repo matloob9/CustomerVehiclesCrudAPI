@@ -10,5 +10,6 @@ namespace CustomerVehicles.Models
         public int CustomerFk { get; set; }
         public bool IsConnected { get; set; }
         public DateTime? LastUpdatedDate { get; set; }
+        public string CustomerName { get; set; }
     }
 }

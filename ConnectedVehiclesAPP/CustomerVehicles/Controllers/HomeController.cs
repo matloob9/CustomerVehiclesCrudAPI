@@ -16,6 +16,7 @@ namespace CustomerVehicles.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         CustomerAPI _CustomerAPI = new CustomerAPI();
+        VehicleAPI _VehicleAPI = new VehicleAPI();
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -24,7 +25,9 @@ namespace CustomerVehicles.Controllers
 
         public async Task<IActionResult> Index()
             {
-                List<Customer> Customers = new List<Customer>();
+            List<Customer> Customers = new List<Customer>();
+            List<Vehicle> Vehicles = new List<Vehicle>();
+
                 HttpClient client = _CustomerAPI.Intial();
                 HttpResponseMessage res = await client.GetAsync("api/Customer");
                 if (res.IsSuccessStatusCode)
@@ -32,7 +35,32 @@ namespace CustomerVehicles.Controllers
                     var results = res.Content.ReadAsStringAsync().Result;
                     Customers = JsonConvert.DeserializeObject<List<Customer>>(results);
                 }
-                return View(Customers);
+
+
+            HttpClient vclient = _VehicleAPI.Intial();
+            HttpResponseMessage Vres = await vclient.GetAsync("api/Vehicle");
+            if (Vres.IsSuccessStatusCode)
+            {
+                var results = Vres.Content.ReadAsStringAsync().Result;
+                Vehicles = JsonConvert.DeserializeObject<List<Vehicle>>(results);
+            }
+            for (int i = 0; i < Vehicles.Count; i++)
+            {
+                Vehicle item = Vehicles[i];
+                int CustomerID = item.CustomerFk;
+
+                HttpClient Cclient = _CustomerAPI.Intial();
+                HttpResponseMessage Cres = await Cclient.GetAsync("api/Customer/"+ CustomerID);
+                if (Cres.IsSuccessStatusCode)
+                {
+                    var results = Cres.Content.ReadAsStringAsync().Result;
+                    Customer CustomerValue = JsonConvert.DeserializeObject<Customer>(results);
+                    Vehicles[i].CustomerName = CustomerValue.CustomerName;
+                }
+
+            }
+
+            return View(Vehicles);
             }
       
 
