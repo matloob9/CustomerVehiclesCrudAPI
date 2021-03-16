@@ -19,5 +19,9 @@
     <Content Remove="CustomerVehicles\Views\Home\Privacy.cshtml" />
     <Content Remove="CustomerVehicles\Views\Shared\_ValidationScriptsPartial.cshtml" />
     <Content Remove="CustomerVehicles\Properties\launchSettings.json" />
+    <Content Remove="CustomerVehicles\bin\Debug\net5.0\appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="CustomerVehicles\obj\Debug\net5.0\CustomerVehicles.Views.dll" />
   </ItemGroup>
 </Project>

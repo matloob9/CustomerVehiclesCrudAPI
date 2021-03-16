@@ -8,7 +8,7 @@ namespace CustomerVehicles.Helper
     {
         public HttpClient Intial()
         {
-            string CustomerAPIcn = "https://localhost:6837/";
+            string CustomerAPIcn = "https://localhost:6837";
             var client = new HttpClient();
             
             client.BaseAddress = new Uri(CustomerAPIcn);
@@ -20,7 +20,7 @@ namespace CustomerVehicles.Helper
     {
         public HttpClient Intial()
         {
-            string VehicleAPIcn = "https://localhost:55839/";
+            string VehicleAPIcn = "https://localhost:55839";
             var client = new HttpClient();
             
             client.BaseAddress = new Uri(VehicleAPIcn);
