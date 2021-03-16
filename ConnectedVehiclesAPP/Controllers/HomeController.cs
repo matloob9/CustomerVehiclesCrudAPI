@@ -24,7 +24,7 @@ namespace ConnectedVehiclesAPP.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Customers()
         {
             List<Customer> Customers = new List<Customer>();
             HttpClient client = _CustomerAPI.Intial();
