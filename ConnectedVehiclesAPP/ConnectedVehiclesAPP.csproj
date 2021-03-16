@@ -3,14 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="ConnectedVehiclesReact\Pages\Error.cshtml" />
-    <Content Remove="ConnectedVehiclesReact\Pages\_ViewImports.cshtml" />
-    <Content Remove="ConnectedVehiclesReact\ClientApp\package-lock.json" />
-    <Content Remove="ConnectedVehiclesReact\ClientApp\package.json" />
-    <Content Remove="ConnectedVehiclesReact\Properties\launchSettings.json" />
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="Helper\" />
   </ItemGroup>
