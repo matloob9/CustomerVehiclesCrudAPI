@@ -37,6 +37,12 @@ namespace ConnectedVehiclesAPP.Controllers
             return View(Customers);
         }
 
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
