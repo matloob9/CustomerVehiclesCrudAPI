@@ -10,4 +10,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="CustomerVehicles\Views\_ViewImports.cshtml" />
+    <Content Remove="CustomerVehicles\Views\_ViewStart.cshtml" />
+    <Content Remove="CustomerVehicles\Views\Shared\_Layout.cshtml" />
+    <Content Remove="CustomerVehicles\Views\Shared\Error.cshtml" />
+    <Content Remove="CustomerVehicles\Views\Home\Index.cshtml" />
+    <Content Remove="CustomerVehicles\Views\Home\Privacy.cshtml" />
+    <Content Remove="CustomerVehicles\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="CustomerVehicles\Properties\launchSettings.json" />
+  </ItemGroup>
 </Project>
