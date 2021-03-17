@@ -49,6 +49,7 @@ namespace CustomerCrudAPI
                 c.IncludeXmlComments(xmlFile);
             });
 
+            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +61,7 @@ namespace CustomerCrudAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CustomerCrudAPI v1"));
             }
-
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();

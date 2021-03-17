@@ -33,6 +33,8 @@ namespace VehicleCrudAPI
             var dbCnStr = Configuration.GetConnectionString("VehicleConSTR");
             services.AddDbContextPool<VehicleContext>(options => options.UseSqlServer(dbCnStr));
 
+            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); });
+
             services.AddControllers();
             
             services.AddSwaggerGen(c =>
@@ -61,6 +63,7 @@ namespace VehicleCrudAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VehicleCrudAPI v1"));
             }
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
