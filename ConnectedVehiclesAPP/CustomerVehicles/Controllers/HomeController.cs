@@ -54,6 +54,28 @@ namespace CustomerVehicles.Controllers
                 if (LastUpdatedDate != null  )
                 {
                     TimeSpan? DiffrenceTime = (DateTime.Now - LastUpdatedDate)*60;
+                    if (DiffrenceTime.Value.Days < 1)
+                    {
+                        if (DiffrenceTime.Value.Hours < 1)
+                        {
+                            if (DiffrenceTime.Value.Minutes < 5)
+                            {
+                                item.IsConnected = true;
+                            }
+                            else
+                            {
+                                item.IsConnected = false;
+                            }
+                        }
+                        else
+                        {
+                            item.IsConnected = false;
+                        }
+                    }
+                    else
+                    {
+                        item.IsConnected = false;
+                    }
                     
                 }
                 int CustomerID = item.CustomerFk;
@@ -97,7 +119,37 @@ namespace CustomerVehicles.Controllers
            
                 int CustomerID = VehicleData.CustomerFk;
 
-                HttpClient Cclient = _CustomerAPI.Intial();
+            DateTime? LastUpdatedDate = VehicleData.LastUpdatedDate;
+
+            if (LastUpdatedDate != null)
+            {
+                TimeSpan? DiffrenceTime = (DateTime.Now - LastUpdatedDate) * 60;
+                if (DiffrenceTime.Value.Days < 1)
+                {
+                    if (DiffrenceTime.Value.Hours < 1)
+                    {
+                        if (DiffrenceTime.Value.Minutes < 5)
+                        {
+                            VehicleData.IsConnected = true;
+                        }
+                        else
+                        {
+                            VehicleData.IsConnected = false;
+                        }
+                    }
+                    else
+                    {
+                        VehicleData.IsConnected = false;
+                    }
+                }
+                else
+                {
+                    VehicleData.IsConnected = false;
+                }
+
+            }
+
+            HttpClient Cclient = _CustomerAPI.Intial();
                 HttpResponseMessage Cres = await Cclient.GetAsync("api/Customer/" + CustomerID);
                 if (Cres.IsSuccessStatusCode)
                 {

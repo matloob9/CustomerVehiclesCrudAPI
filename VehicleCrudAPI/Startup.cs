@@ -15,6 +15,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using VehicleCrudAPI.dContext;
 using VehicleCrudAPI.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace VehicleCrudAPI
 {
@@ -51,6 +53,7 @@ namespace VehicleCrudAPI
                 c.IncludeXmlComments(xmlFile);
             });
 
+            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
         }
 
