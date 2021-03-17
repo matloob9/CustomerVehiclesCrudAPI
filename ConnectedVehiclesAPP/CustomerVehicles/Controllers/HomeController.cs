@@ -9,6 +9,7 @@ using CustomerVehicles.Models;
 using System.Net.Http;
 using Newtonsoft.Json;
 using CustomerVehicles.Helper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CustomerVehicles.Controllers
 {
@@ -23,10 +24,33 @@ namespace CustomerVehicles.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? CustomerFKID ,int? StatusID)
             {
+            bool? Vstatus = null ;
+            if (StatusID == 0)
+            {
+                Vstatus = false;
+            }
+            else if(StatusID == 1)
+            {
+                Vstatus = true;
+            }
+
+            //status = Vstatus & CustomerID = CustomerFKID
             List<Customer> Customers = new List<Customer>();
             List<Vehicle> Vehicles = new List<Vehicle>();
+            List<VehicleStatus> vehicleStatus = new List<VehicleStatus>();
+
+            VehicleStatus TrueStatus = new VehicleStatus();
+            TrueStatus.Id = 0;
+            TrueStatus.Title = "Not Connected";
+
+            VehicleStatus FalseStatus = new VehicleStatus();
+            FalseStatus.Id = 1;
+            FalseStatus.Title = "Connected";
+
+            vehicleStatus.Add(TrueStatus);
+            vehicleStatus.Add(FalseStatus);
 
             #region get Customer Data
             HttpClient client = _CustomerAPI.Intial();
@@ -35,12 +59,16 @@ namespace CustomerVehicles.Controllers
                 {
                     var results = res.Content.ReadAsStringAsync().Result;
                     Customers = JsonConvert.DeserializeObject<List<Customer>>(results);
-                }
+               
+            }
             #endregion
+           
+            ViewBag.AllCustomers = Customers;
+            ViewBag.AllVehicleStatus = vehicleStatus;
 
             #region Get Vehicles Data
             HttpClient vclient = _VehicleAPI.Intial();
-            HttpResponseMessage Vres = await vclient.GetAsync("api/Vehicle");
+            HttpResponseMessage Vres = await vclient.GetAsync($"api/Vehicle?status="+ Vstatus +"&CustomerID="+ CustomerFKID);
             if (Vres.IsSuccessStatusCode)
             {
                 var results = Vres.Content.ReadAsStringAsync().Result;

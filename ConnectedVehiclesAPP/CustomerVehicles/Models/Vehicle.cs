@@ -12,4 +12,12 @@ namespace CustomerVehicles.Models
         public DateTime? LastUpdatedDate { get; set; }
         public string CustomerName { get; set; }
     }
+
+    public class VehicleStatus
+    {
+
+        public int Id { get; set; }
+        public string Title { get; set; }
+       
+    }
 }
