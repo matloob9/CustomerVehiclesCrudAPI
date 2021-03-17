@@ -28,15 +28,17 @@ namespace CustomerVehicles.Controllers
             List<Customer> Customers = new List<Customer>();
             List<Vehicle> Vehicles = new List<Vehicle>();
 
-                HttpClient client = _CustomerAPI.Intial();
+            #region get Customer Data
+            HttpClient client = _CustomerAPI.Intial();
                 HttpResponseMessage res = await client.GetAsync("api/Customer");
                 if (res.IsSuccessStatusCode)
                 {
                     var results = res.Content.ReadAsStringAsync().Result;
                     Customers = JsonConvert.DeserializeObject<List<Customer>>(results);
                 }
+            #endregion
 
-
+            #region Get Vehicles Data
             HttpClient vclient = _VehicleAPI.Intial();
             HttpResponseMessage Vres = await vclient.GetAsync("api/Vehicle");
             if (Vres.IsSuccessStatusCode)
@@ -47,6 +49,13 @@ namespace CustomerVehicles.Controllers
             for (int i = 0; i < Vehicles.Count; i++)
             {
                 Vehicle item = Vehicles[i];
+                DateTime? LastUpdatedDate = item.LastUpdatedDate;
+
+                if (LastUpdatedDate != null  )
+                {
+                    TimeSpan? DiffrenceTime = (DateTime.Now - LastUpdatedDate)*60;
+                    
+                }
                 int CustomerID = item.CustomerFk;
 
                 HttpClient Cclient = _CustomerAPI.Intial();
@@ -59,6 +68,7 @@ namespace CustomerVehicles.Controllers
                 }
 
             }
+            #endregion
 
             return View(Vehicles);
             }
