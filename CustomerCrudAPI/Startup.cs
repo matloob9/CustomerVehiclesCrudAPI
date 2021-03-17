@@ -34,11 +34,7 @@ namespace CustomerCrudAPI
             services.AddDbContextPool<CustomerContext>(options => options.UseSqlServer(dbCnStr));
 
             services.AddControllers();
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Customer Crud API", Version = "v1" });
-            //});
-
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
